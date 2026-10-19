@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-        <span class="nama-aplikasi">KasKu</span>
+        <span class="nama-aplikasi">Catatan Kas Freelancer</span>
         <nav aria-label="Menu utama">
             <a href="#ringkasan">Ringkasan</a>
             <a href="#transaksi">Transaksi</a>
@@ -69,7 +69,8 @@
         <section class="kotak-daftar">
             <h2>Daftar tagihan klien</h2>
             <p id="pesan-tagihan-kosong" aria-live="polite"></p>
-            <table>
+            <div class="tabel-scroll">
+            <table class="tabel">
                 <caption>Daftar tagihan klien</caption>
                 <thead>
                     <tr>
@@ -83,6 +84,7 @@
                 </thead>
                 <tbody id="isi-tagihan"></tbody>
             </table>
+            </div>
         </section>
 
         <div class="area-transaksi">
@@ -142,7 +144,8 @@
                 </div>
             </div>
             <p id="pesan-kosong" aria-live="polite"></p>
-            <table>
+            <div class="tabel-scroll">
+            <table class="tabel">
                 <caption>Daftar semua transaksi</caption>
                 <thead>
                 <tr>
@@ -156,12 +159,13 @@
                 </thead>
                 <tbody id="isi-tabel"></tbody>
             </table>
+            </div>
             </section>
         </div>
         </main>
 
         <footer id="tentang">
-            <p>KasKu - Tugas Pemrograman Web ITS</p>
+            <p>Catatan Kas Freelancer</p>
         </footer>
         <script src="script.js"></script>
     </body>

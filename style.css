@@ -1,124 +1,104 @@
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    :root {
-    color-scheme: light;
-    --warna-aksen: #176b57;
-    --warna-teks: #202824;
-    --warna-latar: #f6f8f7;
-    --warna-garis: #cbd5d1;
-    --warna-putih: #ffffff;
-    }
+:root {
+  --warna-aksen: #176b57;
+  --warna-teks: #202824;
+  --warna-redup: #52615b;
+  --warna-latar: #f6f8f7;
+  --warna-putih: #ffffff;
+  --warna-garis: #cbd5d1;
+  --warna-bahaya: #a32626;
+}
 
-    body {
-    margin: 0;
-    min-width: 52rem;
-    background: var(--warna-latar);
-    color: var(--warna-teks);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    }
+body {
+  margin: 0;
+  background: var(--warna-latar);
+  color: var(--warna-teks);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
 
-    header, main, footer {
-    width: min(100% - 2rem, 72rem);
-    margin-inline: auto;
-    }
+a { color: var(--warna-aksen); }
+h1, h2 { margin-top: 0; line-height: 1.25; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.25rem; }
 
-    header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-block: 1rem;
-    border-bottom: 1px solid var(--warna-garis);
-    }
+header, main, footer { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+main { padding-block: 1.5rem 2rem; }
+section { margin-bottom: 1.5rem; }
 
-    .nama-aplikasi { color: var(--warna-aksen); font-size: 1.25rem; font-weight: 700; }
-    nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-    a { color: var(--warna-aksen); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    main { padding-block: 1.5rem 2rem; }
-    h1, h2 { line-height: 1.25; }
-    h1 { margin-top: 0; font-size: 2rem; }
-    h2 { margin-top: 0; font-size: 1.3rem; }
-    section, .area-transaksi { margin-bottom: 1.5rem; }
+header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--warna-garis);
+}
 
-    .kartu-ringkasan {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-    gap: 1rem;
-    margin: 0;
-    }
+.nama-aplikasi { color: var(--warna-aksen); font-size: 1.25rem; font-weight: 700; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+footer { padding-block: 1rem; border-top: 1px solid var(--warna-garis); color: var(--warna-redup); }
+footer p { margin: 0; }
 
-    .kartu, .kotak-form, .kotak-daftar {
-    padding: 1rem;
-    border: 1px solid var(--warna-garis);
-    border-radius: 0.4rem;
-    background: var(--warna-putih);
-    }
+.kartu, .kotak-form, .kotak-daftar {
+  padding: 1rem; border: 1px solid var(--warna-garis);
+  border-radius: 0.25rem; background: var(--warna-putih);
+}
 
-    .kartu dt { color: #52615b; }
-    .kartu dd { margin: 0.35rem 0 0; font-size: 1.25rem; font-weight: 700; }
+.kartu-ringkasan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+  margin: 0;
+}
 
-    .area-transaksi {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    align-items: start;
-    gap: 1rem;
-    }
+.kartu dt { color: var(--warna-redup); }
+.kartu dd { margin: 0.25rem 0 0; font-size: 1.5rem; font-weight: 700; }
 
-    form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-    gap: 0.85rem;
-    }
+form, .baris-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
 
-    .grup-input { display: flex; min-width: 0; flex-direction: column; gap: 0.3rem; }
-    label { font-weight: 600; }
+.baris-filter { margin-bottom: 1rem; }
+form > p, form > button { grid-column: 1 / -1; margin: 0; }
+.grup-input { display: flex; min-width: 0; flex-direction: column; gap: 0.35rem; }
+label { font-weight: 600; }
 
-    input, select, button {
-    min-height: 2.75rem;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid var(--warna-garis);
-    border-radius: 0.3rem;
-    font: inherit;
-    }
+input, select, button {
+  min-height: 2.75rem; padding: 0.5rem 0.7rem;
+  border: 1px solid var(--warna-garis); border-radius: 0.25rem; font: inherit;
+}
 
-    input, select { width: 100%; background: var(--warna-putih); color: var(--warna-teks); }
-    input:focus, select:focus, button:focus-visible, a:focus-visible {
-    outline: 2px solid var(--warna-aksen);
-    outline-offset: 2px;
-    }
+input, select { width: 100%; background: var(--warna-putih); color: var(--warna-teks); }
+input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 2px solid var(--warna-aksen); outline-offset: 2px; }
 
-    button {
-    width: fit-content;
-    border-color: var(--warna-aksen);
-    background: var(--warna-aksen);
-    color: var(--warna-putih);
-    cursor: pointer;
-    }
+button {
+  width: fit-content; border-color: var(--warna-aksen);
+  background: var(--warna-aksen); color: var(--warna-putih); cursor: pointer;
+}
 
-    button:hover { background: #105443; }
-    form > p, form > button { grid-column: 1 / -1; margin: 0; }
-    #pesan-form, #pesan-tagihan { color: #a32626; }
-    .kotak-daftar { overflow: visible; }
-    table { width: 100%; border-collapse: collapse; text-align: left; }
-    caption { padding-bottom: 0.5rem; text-align: left; font-weight: 600; }
-    th, td { padding: 0.65rem; border: 1px solid var(--warna-garis); vertical-align: top; }
-    th { background: #edf2ef; }
-    .pemasukan { color: var(--warna-aksen); }
-    .pengeluaran { color: #a32626; }
-    td button + button { margin-left: 0.35rem; }
+button:hover { opacity: 0.9; }
 
-    footer {
-    padding-block: 1rem;
-    border-top: 1px solid var(--warna-garis);
-    color: #52615b;
-    }
+#pesan-form, #pesan-tagihan { color: var(--warna-bahaya); }
+#pesan-kosong, #pesan-tagihan-kosong { color: var(--warna-redup); }
+p:empty { display: none; }
 
-    footer p { margin: 0; }
+.tabel-scroll { overflow-x: auto; }
+.tabel { width: 100%; border-collapse: collapse; text-align: left; }
+.tabel th, .tabel td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--warna-garis); vertical-align: top; }
+.tabel th { background: var(--warna-latar); }
 
-    @media (max-width: 24rem) {
-    header { align-items: flex-start; flex-direction: column; }
-    h1 { font-size: 1.7rem; }
-    th, td { padding: 0.45rem; }
-    }
+.tabel caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.tabel td:first-child, #isi-tagihan td:nth-child(3) { white-space: nowrap; }
+#isi-tabel td:nth-child(5), #isi-tagihan td:nth-child(4) { text-align: right; white-space: nowrap; }
+
+.pemasukan { color: var(--warna-aksen); }
+.pengeluaran { color: var(--warna-bahaya); }
+
+td button { min-height: 2rem; padding: 0.25rem 0.55rem; font-size: 0.9rem; }
+td button + button { margin-left: 0.35rem; }
+button[data-aksi-tagihan="lunas"] { background: var(--warna-putih); color: var(--warna-aksen); }
+
+button[data-aksi-transaksi], button[data-aksi-tagihan="hapus"] {
+  border-color: var(--warna-bahaya); background: var(--warna-putih); color: var(--warna-bahaya);
+}
