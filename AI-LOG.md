@@ -66,3 +66,13 @@ Isi satu entri tiap kali AI menghasilkan kode. Tulis "Diubah" dengan kata-kata s
 - Prompt: Perbaiki validasi data tersimpan, pemulihan jika localStorage gagal, dan validasi form dengan pesan pada halaman.
 - Dipakai: Fungsi validasi data, pemulihan penulisan `localStorage`, dan pemeriksaan submit di `script.js`; form menggunakan `novalidate` agar pesan W6 ditampilkan oleh aplikasi.
 - Diubah: Uji data lokal normal/rusak, input tidak valid, dan penulisan localStorage yang gagal.
+
+## Langkah 8: Fitur khas freelancer
+- Prompt: Buat form dan daftar tagihan klien, tandai lunas otomatis sebagai pemasukan, tampilkan piutang, dan sinkronkan penghapusan transaksi pelunasan.
+- Dipakai: Fungsi `tambahTagihan()`, `renderTagihan()`, `tandaiLunas()`, `hapusTagihan()`, dan `hitungPiutang()` di `script.js`, serta bagian tagihan di `index.html`.
+- Diubah: Uji status tagihan, transaksi pelunasan, piutang, validasi, dan penghapusan terkait.
+
+## Langkah 9: Tampilan CSS
+- Prompt: Buat CSS polos dan responsif berdasarkan bagian tampilan pada brief.
+- Dipakai: `style.css` untuk layout, form, ringkasan, tabel, dan tampilan layar kecil; sel jenis transaksi memakai class `pemasukan` atau `pengeluaran`.
+- Diubah:

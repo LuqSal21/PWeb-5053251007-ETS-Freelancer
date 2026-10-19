@@ -35,7 +35,54 @@
                 <dt>Total pengeluaran</dt>
                 <dd id="total-keluar">Rp 0</dd>
             </div>
+            <div class="kartu">
+                <dt>Total piutang</dt>
+                <dd id="total-piutang">Rp 0</dd>
+            </div>
             </dl>
+        </section>
+
+        <section class="kotak-form" id="tagihan">
+            <h2>Tambah tagihan klien</h2>
+            <form id="form-tagihan" novalidate>
+                <div class="grup-input">
+                    <label for="klien">Nama klien</label>
+                    <input type="text" id="klien" name="klien" required />
+                </div>
+                <div class="grup-input">
+                    <label for="proyek">Nama proyek</label>
+                    <input type="text" id="proyek" name="proyek" required />
+                </div>
+                <div class="grup-input">
+                    <label for="nominal-tagihan">Nominal tagihan (Rp)</label>
+                    <input type="number" id="nominal-tagihan" name="nominal" min="1" required />
+                </div>
+                <div class="grup-input">
+                    <label for="tanggal-tagihan">Tanggal tagihan</label>
+                    <input type="date" id="tanggal-tagihan" name="tanggal" required />
+                </div>
+                <p id="pesan-tagihan" aria-live="polite"></p>
+                <button type="submit">Simpan tagihan</button>
+            </form>
+        </section>
+
+        <section class="kotak-daftar">
+            <h2>Daftar tagihan klien</h2>
+            <p id="pesan-tagihan-kosong" aria-live="polite"></p>
+            <table>
+                <caption>Daftar tagihan klien</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Klien</th>
+                        <th scope="col">Proyek</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Nominal</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="isi-tagihan"></tbody>
+            </table>
         </section>
 
         <div class="area-transaksi">
@@ -113,7 +160,9 @@
         </div>
         </main>
 
-        
+        <footer id="tentang">
+            <p>KasKu - Tugas Pemrograman Web ITS</p>
+        </footer>
         <script src="script.js"></script>
     </body>
     </html>
