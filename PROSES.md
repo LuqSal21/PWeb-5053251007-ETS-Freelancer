@@ -28,15 +28,15 @@ Dua array terpisah karena tagihan dan transaksi punya isian yang berbeda. Nomina
 
 ## Bug atau kendala (minimal dua)
 
-### 1. [judul singkat]
-- Gejala:
-- Cara menemukan penyebabnya:
-- Cara mengatasi:
+### 1. Data hilang saat halaman di-refresh
+- Gejala: setelah W1-W3 selesai, transaksi yang saya tambahkan tampil di tabel, tetapi semuanya hilang saat halaman di-refresh.
+- Cara menemukan penyebabnya: saya menambah transaksi, lalu refresh, dan daftarnya kosong lagi. Ternyata transaksi hanya tersimpan di variabel `state` di memori JavaScript, yang dibuat ulang setiap halaman dimuat.
+- Cara mengatasi: saya menambahkan penyimpanan ke localStorage (W4). `simpanData()` menyimpan dengan `JSON.stringify` setiap kali data berubah, dan `muatData()` membacanya kembali dengan `JSON.parse` di dalam `try/catch` saat halaman dibuka.
 
-### 2. Tampilan yag kurang enak dipandang
-- Gejala: Box 
-- Cara menemukan penyebabnya:
-- Cara mengatasi:
+### 2. Tampilan yang kurang enak dipandang
+- Gejala: Ukuran kotak "Tambah transaksi" tidak sama dengan kotak lainnya. Kotak ini cuma selebar sekitar sepertiga halaman dan menyisakan ruang kosong di sebelah kanan, sedangkan kotak ringkasan, tagihan, dan daftar transaksi selebar penuh. Akibatnya tampilan terlihat tidak rata.
+- Cara menemukan penyebabnya: Saya buka halaman lewat Live Server, lalu klik kanan pada kotak tersebut dan pilih Inspect untuk melihat ukurannya. Kotak "Tambah transaksi" ternyata berada di dalam `<div class="area-transaksi">`, dan di style.css div itu memakai `display: grid` dengan `grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr))`. Dengan aturan itu, lebar halaman dibagi menjadi beberapa kolom, dan form hanya menempati satu kolom. Sementara itu, kotak daftar transaksi punya `grid-column: 1 / -1`, jadi ia selebar penuh. Karena itulah ukurannya berbeda.
+- Cara mengatasi: Ubah code pada style.css, yaitu hapus aturan grid pada `.area-transaksi` (beserta aturan `grid-column` pada kotak daftar). Tanpa grid, kotak form dan kotak daftar tersusun ke bawah seperti `section` lainnya, jadi lebarnya sama dengan kotak-kotak lain. Isi form tetap berjajar rapi karena `form` sendiri sudah memakai grid `auto-fit`. Setelah itu saya refresh dan cek lagi, lalu coba perkecil jendela sampai 360px untuk memastikan kotaknya tetap pas.
 
 ## Catatan checkpoint
 - Checkpoint 1 (16.16-16.34): commit `a3fa221`, `a7512ef`, `8422b63` untuk W1, W2, W3.
