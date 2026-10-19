@@ -46,3 +46,8 @@ Isi satu entri tiap kali AI menghasilkan kode. Tulis "Diubah" dengan kata-kata s
 - Prompt: Lengkapi render daftar transaksi dari array dan perbaiki form agar bisa menambahkan data untuk ditampilkan.
 - Dipakai: Fungsi `renderDaftar()`, pembuatan baris tabel dengan `createElement`, dan handler form transaksi di `script.js`.
 - Diubah: Periksa alur kode dan sesuaikan sendiri bila ada perubahan.
+
+## Langkah 4: W3 hapus transaksi
+- Prompt: Tambahkan tombol hapus dengan konfirmasi dan event delegation sesuai brief.
+- Dipakai: Fungsi `hapusTransaksi()` dan `tanganiKlikHapus()` di `script.js`.
+- Diubah: Periksa alur konfirmasi dan penghapusan sebelum digunakan.

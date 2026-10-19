@@ -30,13 +30,31 @@ function buatSel(teks) {
 function buatBaris(item) {
   const baris = document.createElement('tr');
   const catatan = item.catatan || 'Tanpa catatan';
+  const aksi = document.createElement('td');
+  const tombolHapus = document.createElement('button');
   baris.appendChild(buatSel(item.tanggal));
   baris.appendChild(buatSel(catatan));
   baris.appendChild(buatSel(item.kategori));
   baris.appendChild(buatSel(item.jenis === 'pemasukan' ? 'Pemasukan' : 'Pengeluaran'));
   baris.appendChild(buatSel('Rp ' + item.nominal.toLocaleString('id-ID')));
-  baris.appendChild(buatSel(''));
+  tombolHapus.type = 'button';
+  tombolHapus.textContent = 'Hapus';
+  tombolHapus.dataset.id = item.id;
+  aksi.appendChild(tombolHapus);
+  baris.appendChild(aksi);
   return baris;
+}
+
+function hapusTransaksi(id) {
+  const yakin = confirm('Yakin ingin menghapus transaksi ini?');
+  if (!yakin) {
+    return;
+  }
+  const transaksiTersisa = transaksi.filter(function (item) {
+    return item.id !== id;
+  });
+  transaksi.splice(0, transaksi.length, ...transaksiTersisa);
+  renderDaftar();
 }
 
 function renderDaftar() {
@@ -50,6 +68,13 @@ function renderDaftar() {
   pesanKosong.textContent = transaksiTerbaru.length === 0
     ? 'Belum ada transaksi.'
     : '';
+}
+
+function tanganiKlikHapus(event) {
+  const tombol = event.target.closest('button[data-id]');
+  if (tombol) {
+    hapusTransaksi(Number(tombol.dataset.id));
+  }
 }
 
 function tambahTransaksi(event) {
@@ -75,4 +100,5 @@ function tambahTransaksi(event) {
 }
 
 formTransaksi.addEventListener('submit', tambahTransaksi);
+isiTabel.addEventListener('click', tanganiKlikHapus);
 renderDaftar();
