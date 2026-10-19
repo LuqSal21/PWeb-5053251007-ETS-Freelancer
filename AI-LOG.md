@@ -51,3 +51,18 @@ Isi satu entri tiap kali AI menghasilkan kode. Tulis "Diubah" dengan kata-kata s
 - Prompt: Tambahkan tombol hapus dengan konfirmasi dan event delegation sesuai brief.
 - Dipakai: Fungsi `hapusTransaksi()` dan `tanganiKlikHapus()` di `script.js`.
 - Diubah: Periksa alur konfirmasi dan penghapusan sebelum digunakan.
+
+## Langkah 5: W4 data persisten
+- Prompt: Tambahkan pemuatan dan penyimpanan transaksi ke localStorage sesuai brief.
+- Dipakai: Fungsi `muatData()`, `muatArray()`, dan `simpanData()` di `script.js`; perubahan tambah/hapus disimpan sebelum daftar dirender.
+- Diubah: Periksa uji refresh dan kasus data localStorage rusak.
+
+## Langkah 6: W5 ringkasan
+- Prompt: Tambahkan ringkasan pemasukan, pengeluaran, dan saldo yang dihitung dari transaksi.
+- Dipakai: Fungsi `hitungRingkasan()` di `script.js`, dipanggil saat render awal dan setelah data transaksi berubah.
+- Diubah: Periksa hitungan dengan data pemasukan/pengeluaran yang berbeda.
+
+## Langkah 7: Perbaikan W4 dan W6
+- Prompt: Perbaiki validasi data tersimpan, pemulihan jika localStorage gagal, dan validasi form dengan pesan pada halaman.
+- Dipakai: Fungsi validasi data, pemulihan penulisan `localStorage`, dan pemeriksaan submit di `script.js`; form menggunakan `novalidate` agar pesan W6 ditampilkan oleh aplikasi.
+- Diubah: Uji data lokal normal/rusak, input tidak valid, dan penulisan localStorage yang gagal.

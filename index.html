@@ -20,7 +20,7 @@
         <main>
         <h1>Catatan Kas </h1>
 
-        <!-- <section id="ringkasan">
+        <section id="ringkasan">
             <h2>Ringkasan</h2>
             <dl class="kartu-ringkasan">
             <div class="kartu">
@@ -36,12 +36,12 @@
                 <dd id="total-keluar">Rp 0</dd>
             </div>
             </dl>
-        </section> -->
+        </section>
 
         <div class="area-transaksi">
             <section class="kotak-form">
             <h2>Tambah transaksi</h2>
-            <form id="form-transaksi">
+            <form id="form-transaksi" novalidate>
                 
                 <div class="grup-input">
                 <label for="jumlah">Jumlah (Rp)</label>
@@ -50,7 +50,7 @@
 
                 <div class="grup-input">
                 <label for="tipe">Tipe</label>
-                <select id="tipe" name="tipe">
+                <select id="tipe" name="tipe" required>
                     <option value="pemasukan">Pemasukan</option>
                     <option value="pengeluaran">Pengeluaran</option>
                 </select>
