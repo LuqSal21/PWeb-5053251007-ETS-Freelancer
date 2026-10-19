@@ -45,14 +45,14 @@
                 
                 <div class="grup-input">
                 <label for="jumlah">Jumlah (Rp)</label>
-                <input type="number" id="jumlah" name="jumlah" min="1" />
+                <input type="number" id="jumlah" name="jumlah" min="1" required />
                 </div>
 
                 <div class="grup-input">
                 <label for="tipe">Tipe</label>
                 <select id="tipe" name="tipe">
-                    <option value="masuk">Pemasukan</option>
-                    <option value="keluar">Pengeluaran</option>
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran">Pengeluaran</option>
                 </select>
                 </div>
 
@@ -70,7 +70,7 @@
 
                 <div class="grup-input">
                 <label for="tanggal">Tanggal</label>
-                <input type="date" id="tanggal" name="tanggal" />
+                <input type="date" id="tanggal" name="tanggal" required />
                 </div>
                 <p id="pesan-form" aria-live="polite"></p>
                 
@@ -78,7 +78,40 @@
             </form>
             </section>
 
-
+            <section class="kotak-daftar" id="transaksi">
+            <h2>Daftar transaksi</h2>
+            <div class="baris-filter">
+                <div class="grup-input">
+                <label for="filter-tipe">Filter tipe</label>
+                <select id="filter-tipe">
+                    <option value="semua">Semua</option>
+                    <option value="masuk">Pemasukan</option>
+                    <option value="keluar">Pengeluaran</option>
+                </select>
+                </div>
+                <div class="grup-input">
+                <label for="cari">Cari deskripsi</label>
+                <input type="text" id="cari" />
+                </div>
+            </div>
+            <p id="pesan-kosong" aria-live="polite"></p>
+            <table>
+                <caption>Daftar semua transaksi</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Tanggal</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">Tipe</th>
+                    <th scope="col">Jumlah</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+                </thead>
+                <tbody id="isi-tabel"></tbody>
+            </table>
+            </section>
+        </div>
+        </main>
 
         
         <script src="script.js"></script>

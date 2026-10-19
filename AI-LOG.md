@@ -37,5 +37,12 @@ Isi satu entri tiap kali AI menghasilkan kode. Tulis "Diubah" dengan kata-kata s
 - Dipakai: untuk membuat pondasi awal pengerjaan
 - Diubah: menyesuaikan keperluan
 
+## Langkah 2 : fitur w1 -Kategori-
+- Prompt: Maksud dari kategori dan implementasinya
+- Dipakai: Untuk melengkapi W!
+- Diubah: -
 
-
+## Langkah 3: W2 daftar transaksi
+- Prompt: Lengkapi render daftar transaksi dari array dan perbaiki form agar bisa menambahkan data untuk ditampilkan.
+- Dipakai: Fungsi `renderDaftar()`, pembuatan baris tabel dengan `createElement`, dan handler form transaksi di `script.js`.
+- Diubah: Periksa alur kode dan sesuaikan sendiri bila ada perubahan.
